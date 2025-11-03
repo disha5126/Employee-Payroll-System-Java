@@ -160,8 +160,30 @@ public class Main
             }
         void UpdateEmployeeData()//updates employee data only if authorised by employee, currently restricted
             {
+                Scanner sc=new Scanner(System.in);
                 System.out.println("\n\t\t\t---------------------------------------------------------------------------------------\n");
-                System.out.println("\n\t\t\t\tEmployee Data cannot be changed without respective employee authorisation.");
+                System.out.println("Enter the employee id of the employee whose credentials you would like to change: ");
+                int employeeId=sc.nextInt();
+
+                System.out.println("Enter what would you like to change(same as the name of the column in database,Please note you can make only one change at a time)");
+                String updateColumn=sc.nextLine();
+                System.out.println("Now please enter what would you like to change: ");
+                String change=sc.nextLine();
+
+                String sqlUpdate="Update employee set "+updateColumn+"="+change+" where emp_id="+employeeId;
+
+                try 
+                    {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll_system", "root", "root");
+
+                        PreparedStatement ps=cn.prepareStatement(sqlUpdate);
+                        ps.executeUpdate();
+                    } 
+                catch (Exception e) 
+                    {
+                        System.out.println(e);
+                    }
                 System.out.println("\n\t\t\t---------------------------------------------------------------------------------------\n");
 
             }

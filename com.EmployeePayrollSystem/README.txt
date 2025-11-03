@@ -12,7 +12,7 @@ Admin Portal
 - Add new employee records
 - View employee details by ID
 - Delete employee records
-- Update employee records (currently displays authorization message)
+- Update employee records 
 
 Employee Portal
 - Login using employee ID, email, and password
@@ -67,7 +67,6 @@ java Main
 Notes
 - Ensure MySQL server is running before executing the program.
 - Salary slip files are saved as EmployeeName.txt in the working directory.
-- Employee updates require proper authorization (currently restricted).
 
 Authors
 - Disha Joshi
