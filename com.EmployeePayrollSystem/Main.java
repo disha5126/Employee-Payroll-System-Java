@@ -136,7 +136,7 @@ public class Main
                 try
                     {//connect to database
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll_system", "root", "root");
+                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password");
 
                         PreparedStatement ps=cn.prepareStatement(sqlInsert);
                         ps.setString(1, employeeName);
@@ -175,7 +175,7 @@ public class Main
                 try 
                     {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll_system", "root", "root");
+                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password");
 
                         PreparedStatement ps=cn.prepareStatement(sqlUpdate);
                         ps.executeUpdate();
@@ -201,7 +201,7 @@ public class Main
                 try 
                     {//connect to database
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll_system", "root", "root");
+                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password");
 
                         PreparedStatement ps=cn.prepareStatement(sqlFetch);
                         ps.setInt(1, employeeId);
@@ -247,7 +247,7 @@ public class Main
                 try 
                     {//connect to database
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_payroll_system", "root", "root");
+                        Connection cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password");
 
                         PreparedStatement ps=cn.prepareStatement(sqlDelete);
                         ps.executeUpdate();
